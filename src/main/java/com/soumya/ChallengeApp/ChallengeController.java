@@ -10,7 +10,6 @@ import java.util.List;
 @RequestMapping("/challenges")
 public class ChallengeController {
     private ChallengeService challengeService;
-
     public ChallengeController(ChallengeService challengeService) {
         this.challengeService = challengeService;
     }
