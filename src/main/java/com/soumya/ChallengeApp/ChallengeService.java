@@ -52,13 +52,13 @@ public class ChallengeService {
     }
 
     public boolean deleteChallenge(Long id) {
-        for (Challenge challenge : challenges) {
+        return challenges.removeIf(challenge -> challenge.getId().equals(id));
+        /* for (Challenge challenge : challenges) {
             if (challenge.getId().equals(id)) {
                 challenges.remove(challenge);
                 return true;
             }
         }
-        return false;
-        //return challenges.removeIf(challenge -> challenge.getId().equals(id));
+        return false; */
     }
 }
