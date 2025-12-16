@@ -1,10 +1,13 @@
+// java
 package com.soumya.ChallengeApp;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/challenges")
@@ -20,12 +23,18 @@ public class ChallengeController {
     }
 
     @PostMapping
-    public String addChallenge(@RequestBody Challenge challenge) {
+    public ResponseEntity<Object> addChallenge(@RequestBody Challenge challenge) {
         boolean isChallengeAdded = challengeService.addChallenge(challenge);
         if (isChallengeAdded) {
-            return "Challenge added successfully";
+            return ResponseEntity
+                    .ok()
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(Map.of("message", "Challenge added successfully"));
         } else {
-            return "Adding a challenge failed";
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(Map.of("message", "Adding a challenge failed"));
         }
     }
 
