@@ -14,8 +14,9 @@ public class ChallengeAppService {
     @Autowired
     private ChallengeAppRepository challengeAppRepository;
 
-    public void saveEntry(ChallengeEntity myEntry) {
+    public ChallengeEntity saveEntry(ChallengeEntity myEntry) {
         challengeAppRepository.save(myEntry);
+        return myEntry;
     }
 
     public List<ChallengeEntity> getAllChallenges() {
