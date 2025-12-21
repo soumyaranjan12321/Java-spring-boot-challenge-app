@@ -1,4 +1,4 @@
-package com.soumya.ChallengeApp;
+package com.soumya.ChallengeApp.entity;
 
 public class Challenge {
     private Long id;

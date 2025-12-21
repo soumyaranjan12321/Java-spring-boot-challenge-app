@@ -1,6 +1,9 @@
 // java
-package com.soumya.ChallengeApp;
+package com.soumya.ChallengeApp.controller;
 
+import com.soumya.ChallengeApp.entity.Challenge;
+import com.soumya.ChallengeApp.service.ChallengeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +15,12 @@ import java.util.Map;
 @RestController
 @RequestMapping("/challenges")
 public class ChallengeController {
+//    private ChallengeService challengeService;
+//    public ChallengeController(ChallengeService challengeService) {
+//        this.challengeService = challengeService;
+//    }
+    @Autowired
     private ChallengeService challengeService;
-    public ChallengeController(ChallengeService challengeService) {
-        this.challengeService = challengeService;
-    }
 
     @GetMapping
     public List<Challenge> getAllChallenges() {
