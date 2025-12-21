@@ -1,6 +1,7 @@
 // java
-package com.soumya.ChallengeApp;
+package com.soumya.ChallengeApp.service;
 
+import com.soumya.ChallengeApp.entity.Challenge;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

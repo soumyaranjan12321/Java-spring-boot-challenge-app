@@ -1,6 +1,8 @@
 // java
 package com.soumya.ChallengeApp;
 
+import com.soumya.ChallengeApp.entity.Challenge;
+import com.soumya.ChallengeApp.service.ChallengeService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
