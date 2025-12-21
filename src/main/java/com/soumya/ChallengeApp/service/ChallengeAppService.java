@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class ChallengeAppService {
@@ -19,6 +20,14 @@ public class ChallengeAppService {
 
     public List<ChallengeEntity> getAllChallenges() {
         return challengeAppRepository.findAll();
+    }
+
+    public void deleteById(String id) {
+        challengeAppRepository.deleteById(id);
+    }
+
+    public Optional<ChallengeEntity> findById(String id) {
+        return challengeAppRepository.findById(id);
     }
 
 
